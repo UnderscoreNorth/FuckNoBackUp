@@ -71,6 +71,8 @@ $("#wich").click(function() {
 $("#smug").click(function() {      
 	if (smugInit == false) {
 		$("DIV#main.row").prepend("<center><div id = 'smugBox'>0 Smugs</div></center>");
+		$("#smugBox").css("visibility","visible");
+		$("DIV#smugBox").text("0 Smugs");
 		smugInit = true;
 	}
           if (smugTog == true) {
