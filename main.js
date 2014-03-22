@@ -1,6 +1,5 @@
 addHeight();
 addWidth();
-addSmug();
 addReset();
 var smugCounter=getCookie("Smugs");
 if (smugCounter<0){
@@ -43,12 +42,6 @@ function addWidth() {
           modspan.innerHTML = "<button id='wich'>  Change Width</button>"
           objTo.appendChild(modspan);
   }  
-function addSmug() {
-          var objTo = document.getElementById('chatheader')
-          var modspan = document.createElement("span");
-          modspan.innerHTML = "<button id='smug'>  Smug</button>"
-          objTo.appendChild(modspan);
-  }  
 $("#hech").click(function() {
           var tempvar = $("#chatline").val();
           if (tempvar > 0) {
@@ -67,15 +60,6 @@ $("#wich").click(function() {
                   $("#chatline").val("");
           }
 });
-$("#smug").click(function() {      
-          if (smugTog == true) {
-                smugTog = false;
-		$("#smugBox").css("visibility","hidden");
-          } else if (smugTog == false) {
-		smugTog = true;
-		$("#smugBox").css("visibility","visible");
-          }	
-});
 $("#rese").click(function() {   
           maxw = 500;
           maxh = 200;
@@ -90,7 +74,7 @@ $("#rese").click(function() {
 
 _chatBuffer=addChatMessage;
 addChatMessage=function(data) {	
-          if (data.msg.indexOf("smug")!=-1) {
+          if (data.msg.indexOf("smug")!=-1 || data.msg.indexOf("mug4")!=-1) {
                     smugCounter ++;
                     document.cookie = "Smugs =" + smugCounter;
                     if (smugCounter == 1) {
@@ -103,10 +87,13 @@ addChatMessage=function(data) {
           $("#messagebuffer.linewrap img").css("max-height", maxh+"px");
           $("#messagebuffer.linewrap img").css("max-width", maxw+"px");
 }
-
-$("DIV#main.row").prepend("<center><div id = 'smugBox'>0 Smugs</div></center>");
-if (smugCounter == 1) {
-	$("DIV#smugBox").text("1 Smug");
-} else {
-	$("DIV#smugBox").text(smugCounter + " Smugs");
+function loadSmug() {
+	$("#messagebuffer.linewrap img").css("max-height", maxh+"px");
+	$("#messagebuffer.linewrap img").css("max-width", maxw+"px");
+	if (smugCounter == 1) {
+                              $("DIV#smugBox").text("1 Smug");
+                    } else {
+                              $("DIV#smugBox").text(smugCounter + " Smugs");
+                    }
 }
+setInterval(loadSmug(),3000);
