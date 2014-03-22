@@ -15,7 +15,6 @@ if (maxw<0){
           maxw = 500;
 }
 var smugTog = false;
-var smugInit = false;
 
 function getCookie(cname) {
           var name = cname + "=";
@@ -69,12 +68,6 @@ $("#wich").click(function() {
           }
 });
 $("#smug").click(function() {      
-	if (smugInit == false) {
-		$("DIV#main.row").prepend("<center><div id = 'smugBox'>0 Smugs</div></center>");
-		$("#smugBox").css("visibility","visible");
-		$("DIV#smugBox").text("0 Smugs");
-		smugInit = true; 
-	}
           if (smugTog == true) {
                 smugTog = false;
 		$("#smugBox").css("visibility","hidden");
@@ -111,6 +104,7 @@ addChatMessage=function(data) {
           $("#messagebuffer.linewrap img").css("max-width", maxw+"px");
 }
 
+$("DIV#main.row").prepend("<center><div id = 'smugBox'>0 Smugs</div></center>");
 if (smugCounter == 1) {
 	$("DIV#smugBox").text("1 Smug");
 } else {
