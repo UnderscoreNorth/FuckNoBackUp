@@ -73,7 +73,7 @@ $("#smug").click(function() {
 		$("DIV#main.row").prepend("<center><div id = 'smugBox'>0 Smugs</div></center>");
 		$("#smugBox").css("visibility","visible");
 		$("DIV#smugBox").text("0 Smugs");
-		smugInit = true;
+		smugInit = true; 
 	}
           if (smugTog == true) {
                 smugTog = false;
