@@ -1,7 +1,6 @@
-addHeight();
-addWidth();
-addReset();
+addAdjust();
 addSpin();
+addReset();
 var smugCounter=getCookie("Smugs");
 var spinTog = false;
 if (smugCounter<0){
@@ -26,46 +25,37 @@ function getCookie(cname) {
           }
           return "";
 } 
-function addHeight() {
+function addAdjust() {
           var objTo = document.getElementById('chatheader')
           var modspan = document.createElement("span");
-          modspan.innerHTML = "<button id='hech'>  Change Height</button>"
+          modspan.innerHTML = "<button id='adju'>  Adjust Size</button>"
           objTo.appendChild(modspan);
-  }  
-function addReset() {
-          var objTo = document.getElementById('chatheader')
-          var modspan = document.createElement("span");
-          modspan.innerHTML = "<button id='rese'>  Reset</button>"
-          objTo.appendChild(modspan);
-  }  
-function addWidth() {
-          var objTo = document.getElementById('chatheader')
-          var modspan = document.createElement("span");
-          modspan.innerHTML = "<button id='wich'>  Change Width</button>"
-          objTo.appendChild(modspan);
-  }
+}  
 function addSpin() {
           var objTo = document.getElementById('chatheader')
           var modspan = document.createElement("span");
           modspan.innerHTML = "<button id='sptg'>  Spin: Off</button>"
           objTo.appendChild(modspan);
-  }  
-$("#hech").click(function() {
+}  
+function addReset() {
+          var objTo = document.getElementById('chatheader')
+          var modspan = document.createElement("span");
+          modspan.innerHTML = "<button id='rese'>  Reset</button>"
+          objTo.appendChild(modspan);
+} 
+$("#adju").click(function() {
           var tempvar = $("#chatline").val();
-          if (tempvar > 0) {
-                  maxh = tempvar;
-                  document.cookie = "maxh =" + tempvar;
+	  var tempvar2 = tempvar.split(" ");
+	  if (tempvar2[0] > 0 && tempvar2[1] > 0) {
+                  maxh = tempvar2[0];
+                  document.cookie = "maxh =" + tempvar2[0];
                   $("#messagebuffer.linewrap img").css("max-height", maxh+"px");
-                  $("#chatline").val("");
-          }
-});
-$("#wich").click(function() {
-          var tempvar = $("#chatline").val();
-          if (tempvar > 0) {
-                  maxw = tempvar;
-                  document.cookie = "maxw =" + tempvar;
+                  maxw = tempvar2[1];
+                  document.cookie = "maxw =" + tempvar2[1];
                   $("#messagebuffer.linewrap img").css("max-width", maxw+"px");
                   $("#chatline").val("");
+          } else {
+          	$("#chatline").val("Invalid input, enter in the max height followed by the max width seperated by a space.");
           }
 });
 $("#sptg").click(function() {
