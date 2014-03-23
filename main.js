@@ -65,7 +65,7 @@ $("#sptg").click(function() {
                   $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
                   $("span.spin img").css("animation", "spin 10s linear infinite");
                   $(this).text("Spin: On");
-                  $("#chatline").val("Use :sp instead of :pic to post a spinning image");
+                  $("#chatline").val("Use :@ instead of :pic to post a spinning image");
           } else {
           	spinTog = false;
                	$("span.spin img").css("-webkit-animation", "spin 0s linear infinite");
