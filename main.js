@@ -1,7 +1,9 @@
 addHeight();
 addWidth();
 addReset();
+addSpin();
 var smugCounter=getCookie("Smugs");
+var spinTog = false;
 if (smugCounter<0){
           smugCounter = 0;
 }
@@ -41,6 +43,12 @@ function addWidth() {
           var modspan = document.createElement("span");
           modspan.innerHTML = "<button id='wich'>  Change Width</button>"
           objTo.appendChild(modspan);
+  }
+function addSpin() {
+          var objTo = document.getElementById('chatheader')
+          var modspan = document.createElement("span");
+          modspan.innerHTML = "<button id='sptg'>  Spin: Off</button>"
+          objTo.appendChild(modspan);
   }  
 $("#hech").click(function() {
           var tempvar = $("#chatline").val();
@@ -58,6 +66,21 @@ $("#wich").click(function() {
                   document.cookie = "maxw =" + tempvar;
                   $("#messagebuffer.linewrap img").css("max-width", maxw+"px");
                   $("#chatline").val("");
+          }
+});
+$("#sptg").click(function() {
+          if (spinTog == false) {
+                  spinTog = true;
+                  $("span.spin img").css("-webkit-animation", "spin 10s linear infinite");
+                  $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
+                  $("span.spin img").css("animation", "spin 10s linear infinite");
+                  $(this).text("Spin: On");
+          } else {
+          	spinTog = false;
+               	$("span.spin img").css("-webkit-animation", "spin 0s linear infinite");
+                $("span.spin img").css("-moz-animation", "spin 0s linear infinite");
+               	$("span.spin img").css("animation", "spin 0s linear infinite");
+                $(this).text("Spin: Off");
           }
 });
 $("#rese").click(function() {   
