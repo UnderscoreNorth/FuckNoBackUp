@@ -2,7 +2,7 @@ addAdjust();
 addSpin();
 addReset();
 var smugCounter = getCookie("Smugs");
-var spinTog = false;
+var spinTog = true;
 if (smugCounter < 0) {
     smugCounter = 0;
 }
@@ -14,7 +14,6 @@ var maxw = getCookie("maxw");
 if (maxw < 0) {
     maxw = 500;
 }
-var smugTog = false;
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -36,7 +35,7 @@ function addAdjust() {
 function addSpin() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='sptg'>  Spin: Off</button>"
+    modspan.innerHTML = "<button id='sptg'>  Spin: On</button>"
     objTo.appendChild(modspan);
 }
 
@@ -122,5 +121,8 @@ function loadSmug() {
     } else {
         $("DIV#smugBox").text(smugCounter + " Smugs");
     }
+    $("span.spin img").css("-webkit-animation", "spin 10s linear infinite");
+    $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
+    $("span.spin img").css("animation", "spin 10s linear infinite");
 }
 setInterval(loadSmug(), 3000);
