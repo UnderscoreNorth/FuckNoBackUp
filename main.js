@@ -32,14 +32,14 @@ function getCookie(cname) {
 function addAdjust() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='adju'>  Adjust Size</button>"
+    modspan.innerHTML = "<button id='adju'> Adjust Size</button>"
     objTo.appendChild(modspan);
 }
 
 function addEmote() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='emte'>  Emotes: On</button>"
+    modspan.innerHTML = "<button id='emte'> Emotes: On</button>"
     objTo.appendChild(modspan);
 }
 
@@ -53,14 +53,14 @@ function addKek() {
 function addSpin() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='sptg'>  Spin: On</button>"
+    modspan.innerHTML = "<button id='sptg'> Spin: On</button>"
     objTo.appendChild(modspan);
 }
 
 function addReset() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='rese'>  Reset</button>"
+    modspan.innerHTML = "<button id='rese'> Reset</button>"
     objTo.appendChild(modspan);
 }
 $("#adju").click(function () {
@@ -110,7 +110,7 @@ $("#kekb").click(function (){
         $("#messagebuffer.linewrap div").css("-moz-animation", "spin 500s linear infinite");
         $("#messagebuffer.linewrap div").css("animation: spin 500s linear infinite");
         kekTog = true;
-    } else {    
+    } else {
         $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 0s linear infinite");
         $("#messagebuffer.linewrap div").css("-moz-animation", "spin 0s linear infinite");
         $("#messagebuffer.linewrap div").css("animation", "spin 0s linear infinite");
@@ -121,11 +121,11 @@ $("#emte").click(function (){
     if (emoTog == false) {
         emoTog = true;
         $(this).text("Emotes: On");
-        $("#messagebuffer.linewrap img").css("display", "inline");
+        $("img").css("display", "inline");
     } else {
         emoTog = false;
         $(this).text("Emotes: Off");
-        $("#messagebuffer.linewrap img").css("display", "none");
+        $("img").css("display", "none");
     }
 });
 
@@ -151,20 +151,6 @@ addChatMessage = function (data) {
         $("span.spin img").css("-webkit-animation", "spin 0s linear infinite");
         $("span.spin img").css("-moz-animation", "spin 0s linear infinite");
         $("span.spin img").css("animation", "spin 0s linear infinite");
-    }
-    if (emoTog == false) {
-        $("#messagebuffer.linewrap img").css("display", "inline");
-    } else {
-        $("#messagebuffer.linewrap img").css("display", "none");
-    }
-    if (kekTog == false){
-        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 500s linear infinite");
-        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 500s linear infinite");
-        $("#messagebuffer.linewrap div").css("animation: spin 500s linear infinite");
-    } else {    
-        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 0s linear infinite");
-        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 0s linear infinite");
-        $("#messagebuffer.linewrap div").css("animation", "spin 0s linear infinite");
     }
 }
 
