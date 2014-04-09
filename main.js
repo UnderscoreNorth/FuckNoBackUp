@@ -191,6 +191,6 @@ function loadSmug() {
     $("span.spin img").css("-webkit-animation", "spin 10s linear infinite");
     $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
     $("span.spin img").css("animation", "spin 10s linear infinite");
-    updateBanner;
+    updateBanner();
 }
 setInterval(loadSmug(), 3000);
