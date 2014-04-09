@@ -129,6 +129,18 @@ $("#emte").click(function (){
     }
 });
 
+function updateBanner() {
+  var pixelFags = new Array("_North","Achilles","DragonSlayer","FuckNo","Happy","Kirakira_Tsundere","Kolt","MassiveFaggot","Mikanrin","Mioo-chi","NikolainnDuke","PingPongYeti","Pyro","shake_it","Shizuruanon","SilentHonorArk","SoupySauce","SuperSassy","thuglyfegg","ToradoraFag","tsukari","Verty");
+  for (var i = 0; i < pixelFags.length; i++) {
+$("span."+pixelFags[i]).css("display","none");
+    if ($("DIV.userlist_item").text().indexOf(pixelFags[i]) > -1) {
+      $("span."+pixelFags[i]).css("display","inline");
+}
+}
+}
+socket.on("addUser", updateBanner);
+socket.on("userLeave", updateBanner);
+
 _chatBuffer = addChatMessage;
 addChatMessage = function (data) {
     if (data.msg.indexOf("smug") != -1 || data.msg.indexOf("mug4") != -1) {
