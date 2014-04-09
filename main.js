@@ -1,8 +1,8 @@
 addAdjust();
 addSpin();
-addReset();
 addEmote();
 addKek();
+addReset();
 var smugCounter = getCookie("Smugs");
 var spinTog = true;
 var kekTog = false;
@@ -151,6 +151,20 @@ addChatMessage = function (data) {
         $("span.spin img").css("-webkit-animation", "spin 0s linear infinite");
         $("span.spin img").css("-moz-animation", "spin 0s linear infinite");
         $("span.spin img").css("animation", "spin 0s linear infinite");
+    }
+    if (emoTog == true) {
+        $("img").css("display", "inline");
+    } else {
+        $("img").css("display", "none");
+    }
+    if (kekTog == true){
+        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 500s linear infinite");
+        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 500s linear infinite");
+        $("#messagebuffer.linewrap div").css("animation: spin 500s linear infinite");
+    } else {
+        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 0s linear infinite");
+        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 0s linear infinite");
+        $("#messagebuffer.linewrap div").css("animation", "spin 0s linear infinite");
     }
 }
 
