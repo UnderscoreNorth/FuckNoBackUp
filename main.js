@@ -121,11 +121,11 @@ $("#emte").click(function (){
     if (emoTog == false) {
         emoTog = true;
         $(this).text("Emotes: On");
-        $("img").css("display", "inline");
+        $("#messagebuffer.linewrap img").css("display", "inline");
     } else {
         emoTog = false;
         $(this).text("Emotes: Off");
-        $("img").css("display", "none");
+        $("#messagebuffer.linewrap img").css("display", "none");
     }
 });
 
@@ -153,9 +153,9 @@ addChatMessage = function (data) {
         $("span.spin img").css("animation", "spin 0s linear infinite");
     }
     if (emoTog == true) {
-        $("img").css("display", "inline");
+        $("#messagebuffer.linewrap img").css("display", "inline");
     } else {
-        $("img").css("display", "none");
+        $("#messagebuffer.linewrap img").css("display", "none");
     }
     if (kekTog == true){
         $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 500s linear infinite");
