@@ -121,11 +121,11 @@ $("#emte").click(function (){
     if (emoTog == false) {
         emoTog = true;
         $(this).text("Emotes: On");
-        $("img").css("display", "inline");
+        $("#messagebuffer.linewrap img").css("display", "inline");
     } else {
         emoTog = false;
         $(this).text("Emotes: Off");
-        $("img").css("display", "none");
+        $("#messagebuffer.linewrap img").css("display", "none");
     }
 });
 
@@ -151,6 +151,20 @@ addChatMessage = function (data) {
         $("span.spin img").css("-webkit-animation", "spin 0s linear infinite");
         $("span.spin img").css("-moz-animation", "spin 0s linear infinite");
         $("span.spin img").css("animation", "spin 0s linear infinite");
+    }
+    if (emoTog == false) {
+        $("#messagebuffer.linewrap img").css("display", "inline");
+    } else {
+        $("#messagebuffer.linewrap img").css("display", "none");
+    }
+    if (kekTog == false){
+        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 500s linear infinite");
+        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 500s linear infinite");
+        $("#messagebuffer.linewrap div").css("animation: spin 500s linear infinite");
+    } else {    
+        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 0s linear infinite");
+        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 0s linear infinite");
+        $("#messagebuffer.linewrap div").css("animation", "spin 0s linear infinite");
     }
 }
 
