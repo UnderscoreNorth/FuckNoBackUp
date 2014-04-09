@@ -1,8 +1,12 @@
 addAdjust();
 addSpin();
 addReset();
+addEmote();
+addKek();
 var smugCounter = getCookie("Smugs");
 var spinTog = true;
+var kekTog = false;
+var emoTog = true;
 if (smugCounter < 0) {
     smugCounter = 0;
 }
@@ -29,6 +33,20 @@ function addAdjust() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
     modspan.innerHTML = "<button id='adju'>  Adjust Size</button>"
+    objTo.appendChild(modspan);
+}
+
+function addEmote() {
+    var objTo = document.getElementById('chatheader')
+    var modspan = document.createElement("span");
+    modspan.innerHTML = "<button id='emte'>  Emotes: On</button>"
+    objTo.appendChild(modspan);
+}
+
+function addKek() {
+    var objTo = document.getElementById('chatheader')
+    var modspan = document.createElement("span");
+    modspan.innerHTML = "<button id='kekb'>:^)</button>"
     objTo.appendChild(modspan);
 }
 
@@ -85,6 +103,30 @@ $("#rese").click(function () {
     $("DIV#smugBox").text("0 Smugs");
     $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
     $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
+});
+$("#kekb").click(function (){
+    if (kekTog == false){
+        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 500s linear infinite");
+        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 500s linear infinite");
+        $("#messagebuffer.linewrap div").css("animation: spin 500s linear infinite");
+        kekTog = true;
+    } else {    
+        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 0s linear infinite");
+        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 0s linear infinite");
+        $("#messagebuffer.linewrap div").css("animation", "spin 0s linear infinite");
+        kekTog = false;
+    }
+});
+$("#emte").click(function (){
+    if (emoTog == false) {
+        emoTog = true;
+        $(this).text("Emotes: On");
+        $("img").css("display", "inline");
+    } else {
+        emoTog = false;
+        $(this).text("Emotes: Off");
+        $("img").css("display", "none");
+    }
 });
 
 _chatBuffer = addChatMessage;
