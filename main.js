@@ -1,13 +1,6 @@
 addAdjust();
 addSpin();
-addEmote();
-addReset();
-var smugCounter = getCookie("Smugs");
 var spinTog = true;
-var emoTog = true;
-if (smugCounter < 0) {
-    smugCounter = 0;
-}
 var maxh = getCookie("maxh");
 if (maxh < 0) {
     maxh = 200;
@@ -34,24 +27,10 @@ function addAdjust() {
     objTo.appendChild(modspan);
 }
 
-function addEmote() {
-    var objTo = document.getElementById('chatheader')
-    var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='emte'> Emotes: On</button>"
-    objTo.appendChild(modspan);
-}
-
 function addSpin() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
     modspan.innerHTML = "<button id='sptg'> Spin: On</button>"
-    objTo.appendChild(modspan);
-}
-
-function addReset() {
-    var objTo = document.getElementById('chatheader')
-    var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='rese'> Reset</button>"
     objTo.appendChild(modspan);
 }
 $("#adju").click(function () {
@@ -84,29 +63,6 @@ $("#sptg").click(function () {
         $("span.spin img").css("animation", "spin 0s linear infinite");
     }
 });
-$("#rese").click(function () {
-    maxw = 500;
-    maxh = 200;
-    smugCounter = 0;
-    document.cookie = "Smugs =" + smugCounter;
-    document.cookie = "maxw =" + maxw;
-    document.cookie = "maxh =" + maxh;
-    $("DIV#smugBox").text("0 Smugs");
-    $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
-    $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
-});
-$("#emte").click(function (){
-    if (emoTog == false) {
-        emoTog = true;
-        $(this).text("Emotes: On");
-        $("#messagebuffer.linewrap img").css("display", "inline");
-    } else {
-        emoTog = false;
-        $(this).text("Emotes: Off");
-        $("#messagebuffer.linewrap img").css("display", "none");
-    }
-});
-
 function updateBanner() {
   var pixelFags = new Array("_North","Achilles","dragonslayer","FuckNo","Happy","Kirakira_Tsundere","Kolt","MassiveFaggot","Mikanrin","Mioo-chi","NikolainnDuke","PingPongYeti","Pyro","Shake_it","ShizuruAnon","SilentHonorArk","soupysauce","SuperSassy","thuglyfegg","ToradoraFag","tsukari","Verty");
   for (var i = 0; i < pixelFags.length; i++) {
@@ -121,15 +77,6 @@ socket.on("userLeave", updateBanner);
 
 _chatBuffer = addChatMessage;
 addChatMessage = function (data) {
-    if (data.msg.indexOf("smug") != -1 || data.msg.indexOf("mug4") != -1) {
-        smugCounter++;
-        document.cookie = "Smugs =" + smugCounter;
-        if (smugCounter == 1) {
-            $("DIV#smugBox").text("1 Smug");
-        } else {
-            $("DIV#smugBox").text(smugCounter + " Smugs");
-        }
-    }
     _chatBuffer(data);
     $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
     $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
@@ -142,21 +89,11 @@ addChatMessage = function (data) {
         $("span.spin img").css("-moz-animation", "spin 0s linear infinite");
         $("span.spin img").css("animation", "spin 0s linear infinite");
     }
-    if (emoTog == true) {
-        $("#messagebuffer.linewrap img").css("display", "inline");
-    } else {
-        $("#messagebuffer.linewrap img").css("display", "none");
-    }
 }
 
 function loadSmug() {
     $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
     $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
-    if (smugCounter == 1) {
-        $("DIV#smugBox").text("1 Smug");
-    } else {
-        $("DIV#smugBox").text(smugCounter + " Smugs");
-    }
     $("span.spin img").css("-webkit-animation", "spin 10s linear infinite");
     $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
     $("span.spin img").css("animation", "spin 10s linear infinite");
