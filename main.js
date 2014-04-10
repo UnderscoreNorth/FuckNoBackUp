@@ -130,7 +130,7 @@ $("#emte").click(function (){
 });
 
 function updateBanner() {
-  var pixelFags = new Array("_North","Achilles","DragonSlayer","FuckNo","Happy","Kirakira_Tsundere","Kolt","MassiveFaggot","Mikanrin","Mioo-chi","NikolainnDuke","PingPongYeti","Pyro","Shake_it","Shizuruanon","SilentHonorArk","soupysauce","SuperSassy","thuglyfegg","ToradoraFag","tsukari","Verty");
+  var pixelFags = new Array("_North","Achilles","dragonslayer","FuckNo","Happy","Kirakira_Tsundere","Kolt","MassiveFaggot","Mikanrin","Mioo-chi","NikolainnDuke","PingPongYeti","Pyro","Shake_it","Shizuruanon","SilentHonorArk","soupysauce","SuperSassy","thuglyfegg","ToradoraFag","tsukari","Verty");
   for (var i = 0; i < pixelFags.length; i++) {
 $("span."+pixelFags[i]).css("display","none");
     if ($("DIV.userlist_item").text().indexOf(pixelFags[i]) > -1) {
