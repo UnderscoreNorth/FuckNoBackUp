@@ -1,11 +1,9 @@
 addAdjust();
 addSpin();
 addEmote();
-addKek();
 addReset();
 var smugCounter = getCookie("Smugs");
 var spinTog = true;
-var kekTog = false;
 var emoTog = true;
 if (smugCounter < 0) {
     smugCounter = 0;
@@ -40,13 +38,6 @@ function addEmote() {
     var objTo = document.getElementById('chatheader')
     var modspan = document.createElement("span");
     modspan.innerHTML = "<button id='emte'> Emotes: On</button>"
-    objTo.appendChild(modspan);
-}
-
-function addKek() {
-    var objTo = document.getElementById('chatheader')
-    var modspan = document.createElement("span");
-    modspan.innerHTML = "<button id='kekb'>:^)</button>"
     objTo.appendChild(modspan);
 }
 
@@ -104,19 +95,6 @@ $("#rese").click(function () {
     $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
     $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
 });
-$("#kekb").click(function (){
-    if (kekTog == false){
-        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 500s linear infinite");
-        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 500s linear infinite");
-        $("#messagebuffer.linewrap div").css("animation: spin 500s linear infinite");
-        kekTog = true;
-    } else {
-        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 0s linear infinite");
-        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 0s linear infinite");
-        $("#messagebuffer.linewrap div").css("animation", "spin 0s linear infinite");
-        kekTog = false;
-    }
-});
 $("#emte").click(function (){
     if (emoTog == false) {
         emoTog = true;
@@ -168,15 +146,6 @@ addChatMessage = function (data) {
         $("#messagebuffer.linewrap img").css("display", "inline");
     } else {
         $("#messagebuffer.linewrap img").css("display", "none");
-    }
-    if (kekTog == true){
-        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 500s linear infinite");
-        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 500s linear infinite");
-        $("#messagebuffer.linewrap div").css("animation: spin 500s linear infinite");
-    } else {
-        $("#messagebuffer.linewrap div").css("-webkit-animation", "spin 0s linear infinite");
-        $("#messagebuffer.linewrap div").css("-moz-animation", "spin 0s linear infinite");
-        $("#messagebuffer.linewrap div").css("animation", "spin 0s linear infinite");
     }
 }
 
