@@ -9,6 +9,7 @@ var maxw = getCookie("maxw");
 if (maxw < 0) {
     maxw = 500;
 }
+$('#us-theme').append('<option value="' + "http://puu.sh/84HyF.css" + '">' + "No Background" + '</option>');
 
 function getCookie(cname) {
     var name = cname + "=";
