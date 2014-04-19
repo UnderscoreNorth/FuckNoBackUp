@@ -99,5 +99,6 @@ function loadSmug() {
     $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
     $("span.spin img").css("animation", "spin 10s linear infinite");
     updateBanner();
+    $("span#currentlyStreaming").load("https://docs.google.com/spreadsheet/pub?key=0AiZgrUw4okC-dGhiZ1VaM2VmWHMxZDZ0ekY0NHdrSEE&single=true&gid=2&range=A3&output=html .s0");
 }
-setInterval(loadSmug(), 3000);
+setInterval(loadSmug(), 10000);
