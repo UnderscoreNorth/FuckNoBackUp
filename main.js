@@ -79,6 +79,7 @@ socket.on("userLeave", updateBanner);
 _chatBuffer = addChatMessage;
 addChatMessage = function (data) {
     _chatBuffer(data);
+    $("span#currentlyStreaming").load("https://docs.google.com/spreadsheet/pub?key=0AiZgrUw4okC-dGhiZ1VaM2VmWHMxZDZ0ekY0NHdrSEE&single=true&gid=2&range=A1&output=html&ts= .s0")+ $.now();
     $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
     $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
     if (spinTog == true) {
@@ -99,6 +100,6 @@ function loadSmug() {
     $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
     $("span.spin img").css("animation", "spin 10s linear infinite");
     updateBanner();
-    $("span#currentlyStreaming").load("https://docs.google.com/spreadsheet/pub?key=0AiZgrUw4okC-dGhiZ1VaM2VmWHMxZDZ0ekY0NHdrSEE&single=true&gid=2&range=A3&output=html .s0");
+    $("span#currentlyStreaming").load("https://docs.google.com/spreadsheet/pub?key=0AiZgrUw4okC-dGhiZ1VaM2VmWHMxZDZ0ekY0NHdrSEE&single=true&gid=2&range=A1&output=html&ts= .s0")+ $.now();
 }
 setInterval(loadSmug(), 10000);
