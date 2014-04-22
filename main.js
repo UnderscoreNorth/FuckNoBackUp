@@ -103,3 +103,6 @@ function loadSmug() {
     $("span#currentlyStreaming").load("https://docs.google.com/spreadsheet/pub?key=0AiZgrUw4okC-dGhiZ1VaM2VmWHMxZDZ0ekY0NHdrSEE&single=true&gid=2&range=A1&output=html&ts= .s0")+ $.now();
 }
 setInterval(loadSmug(), 10000);
+
+
+//test
