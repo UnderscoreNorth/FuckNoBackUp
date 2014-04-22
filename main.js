@@ -105,4 +105,4 @@ function loadSmug() {
 setInterval(loadSmug(), 10000);
 
 
-//test
+//test2
