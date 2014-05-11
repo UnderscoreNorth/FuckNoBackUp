@@ -65,7 +65,7 @@ $("#sptg").click(function () {
     }
 });
 function updateBanner() {
-  var pixelFags = new Array("_North","Achilles","dragonslayer","FuckNo","Happy","Kirakira_Tsundere","Dehry","Kolt","MassiveFaggot","Mikanrin","Mioo-chi","NikolainnDuke","PingPongYeti","Pyro","Shake_it","ShizuruAnon","SilentHonorArk","soupysauce","SuperSassy","thuglyfegg","Toradorafag","tsukari","Verty", "ChinatsuKougou");
+  var pixelFags = new Array("_North","Achilles","zzaz3","dragonslayer","FuckNo","Happy","Kirakira_Tsundere","Dehry","Kolt","MassiveFaggot","Mikanrin","Mioo-chi","NikolainnDuke","PingPongYeti","Pyro","Shake_it","ShizuruAnon","SilentHonorArk","soupysauce","SuperSassy","thuglyfegg","Toradorafag","tsukari","Verty", "ChinatsuKougou");
   for (var i = 0; i < pixelFags.length; i++) {
 $("span."+pixelFags[i]).css("display","none");
     if ($("DIV.userlist_item").text().indexOf(pixelFags[i]) > -1) {
