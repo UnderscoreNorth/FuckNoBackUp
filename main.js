@@ -53,15 +53,15 @@ $("#sptg").click(function () {
     if (spinTog == false) {
         spinTog = true;
         $(this).text("Spin: On");
-        $("span.spin img").css("-webkit-animation", "spin 10s linear infinite");
-        $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
-        $("span.spin img").css("animation", "spin 10s linear infinite");
+        $("span.spin img").css("-webkit-animation", "spin 5ms linear infinite");
+        $("span.spin img").css("-moz-animation", "spin 5ms linear infinite");
+        $("span.spin img").css("animation", "spin 5ms linear infinite");
     } else {
         spinTog = false;
         $(this).text("Spin: Off");
-        $("span.spin img").css("-webkit-animation", "spin 0s linear infinite");
-        $("span.spin img").css("-moz-animation", "spin 0s linear infinite");
-        $("span.spin img").css("animation", "spin 0s linear infinite");
+        $("span.spin img").css("-webkit-animation", "spin 0ms linear infinite");
+        $("span.spin img").css("-moz-animation", "spin 0ms linear infinite");
+        $("span.spin img").css("animation", "spin 0ms linear infinite");
     }
 });
 function updateBanner() {
@@ -83,22 +83,22 @@ addChatMessage = function (data) {
     $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
     $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
     if (spinTog == true) {
-        $("span.spin img").css("-webkit-animation", "spin 10s linear infinite");
-        $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
-        $("span.spin img").css("animation", "spin 10s linear infinite");
+        $("span.spin img").css("-webkit-animation", "spin 5ms linear infinite");
+        $("span.spin img").css("-moz-animation", "spin 5ms linear infinite");
+        $("span.spin img").css("animation", "spin 5ms linear infinite");
     } else {
-        $("span.spin img").css("-webkit-animation", "spin 0s linear infinite");
-        $("span.spin img").css("-moz-animation", "spin 0s linear infinite");
-        $("span.spin img").css("animation", "spin 0s linear infinite");
+        $("span.spin img").css("-webkit-animation", "spin 0ms linear infinite");
+        $("span.spin img").css("-moz-animation", "spin 0ms linear infinite");
+        $("span.spin img").css("animation", "spin 0ms linear infinite");
     }
 }
 
 function loadSmug() {
     $("#messagebuffer.linewrap img").css("max-height", maxh + "px");
     $("#messagebuffer.linewrap img").css("max-width", maxw + "px");
-    $("span.spin img").css("-webkit-animation", "spin 10s linear infinite");
-    $("span.spin img").css("-moz-animation", "spin 10s linear infinite");
-    $("span.spin img").css("animation", "spin 10s linear infinite");
+    $("span.spin img").css("-webkit-animation", "spin 5ms linear infinite");
+    $("span.spin img").css("-moz-animation", "spin 5ms linear infinite");
+    $("span.spin img").css("animation", "spin 5ms linear infinite");
     updateBanner();
     $("span#currentlyStreaming").load("https://docs.google.com/spreadsheet/pub?key=0AiZgrUw4okC-dGhiZ1VaM2VmWHMxZDZ0ekY0NHdrSEE&single=true&gid=2&range=A1&output=html&ts= .s0")+ $.now();
 }
