@@ -1,3 +1,43 @@
+#embed-help {cursor:pointer !important; margin-left:7px}
+.rightfloat {float:right;}
+.leftfloat {float:left;}
+.spoiler  a {color: #000000 !important;}
+.spoiler:hover  a {color: #ffffff !important;}
+.spoiler * {opacity: 0;}
+.spoiler:hover * {opacity: 1;}
+#messagebuffer.linewrap img, #messagebuffer.linewrap video{max-width: 300px; max-height: 300px;}
+.profile-image {max-width:125px; width:125px; height:auto; max-height:300px;}
+.profile-box {max-width: 137px; max-height:500px;}
+.modal-dialog {width: 90%;}
+#messagebuffer {width: auto;padding-left: 0px;padding-right: 0px;}
+
+#chanjs-deny { display: none;}
+
+/* ----- Quality list ----- */
+
+#qualitymenu .dropdown-menu {width:100% !important;min-width:50px !important;margin-top:0px;z-index: 1;}
+#qualitymenu .header-drop-link {padding-left: 8px;}
+#qualitymenu .header-drop-link:hover {text-decoration:none;color:#fff;background-color:#2a9fd6}
+
+/* ----- PM box color ----- */
+
+.panel-primary > .panel-heading {background-color:black !important;border-color: white !important;}
+.panel-primary {border-color: white !important;}
+
+/* ----- Schedule ----- */
+
+#ScheduleTabscontent table {width:100%;}
+#ScheduleTabscontent tr,#ScheduleTabscontent th, #ScheduleTabscontent td {border: 1px solid black;width:14.28%;}
+#ScheduleTabscontent tr,#ScheduleTabscontent th {text-align:center;}
+#ScheduleTabscontent td {text-align:left;}
+#sVideoLink {color:yellow !important}
+#sTLink {color:white !important}
+#sAiring {font-weight: bold;background-color: #008000;color:white}
+#sMarathon {font-weight: bold;background-color: blue;color:white}
+
+/* ----- AFK ----- */
+.userlist_afk > span {font-style:italic}
+
 /* ----- Body and main container ----- */
 
 body {overflow-x:hidden}
@@ -8,21 +48,13 @@ body {overflow-x:hidden}
 #motdrow, #announcements, #main, #playlistrow {border:solid 2px transparent; margin-bottom:5px}
 #main > div, #playlistrow > div {padding-left:5px; padding-right:5px; margin-top:5px; margin-bottom:5px}
 
-/* ----- Buttons ----- */
-
-.btn {text-shadow:none}
-
 /* ----- Brand ----- */
 
 .navbar-brand {cursor:default}
 
-/* ----- MOTD row ----- */
-
-#motdwrap {margin:5px -10px}
-
 /* ----- MOTD ----- */
 
-#motdwrap {padding:10px; border-color:white; box-shadow:none}
+#motdwrap {padding:10px;margin:5px -10px; border-color:black; box-shadow:none}
 #togglemotd {margin-top:-5px}
 
 /* ----- Announcements ----- */
@@ -34,7 +66,6 @@ body {overflow-x:hidden}
 #drinkcount {margin:0px}
 
 /* ----- Userlist ----- */
-
 .userlist_item {cursor:pointer}
 
 /* ----- Playlist row inner panes ----- */
@@ -45,124 +76,53 @@ body {overflow-x:hidden}
 
 #leftpane .well {margin-bottom:5px}
 
-/* ----- Queue titles ----- */
+/* ----- Queue ----- */
 
 .qe_title {margin-left:4px}
+#queue {width:100% !important}
 
 /* ----- Footer ----- */
 
 #footer {height:auto}
 
-
-
 /* ----- CyTube Plus selectors ----- */
 
-#chanavatar {margin-right:10px}
-
-#azukirow {
-	padding-left:5px; padding-right:5px; border-left:solid 2px transparent; border-right:solid 2px transparent;
-	background:transparent; background-repeat:no-repeat !important; background-position:center center !important;
-	margin:0px -8px; min-height:5px;
-}
-
-#rulesbtnwrap {text-align:center}
-#rules-btn {margin-top:10px; margin-bottom:5px}
-#rulespanel-outer {width:100%; padding:0px}
-#rulespanel {
-	max-width:700px; margin:0 auto; margin-top:0px; padding:4px; border:solid 2px white; text-align:left;
-	border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px;
-}
-
-#attbarrow-outer {padding:0px 5px}
-#attbar {height:22px; background-color:white}
-
-#titlerow {
-	background-color:white;
-	background-image:linear-gradient(to right, #cccccc, #cccccc);
-	background-position:0px center;
-	background-size:0% 100%; background-repeat:no-repeat;
-	margin:-5px -8px 5px;
-	border-radius:4px;
-}
-
-#titlerow-outer {padding:3px 5px; text-align:center; font-size:16pt; color:black; text-shadow: 0px 0px 10px #666666, 0px 0px 10px #666666;}
-
-#titlerow #currenttitle {
-	border:none;
-	background:transparent;
-}
-
-#mediainfo {
-	background:transparent; margin-bottom:0px; border-width: 1px 1px 0px; border-style:solid solid none;
-	border-color:#CCC #CCC -moz-use-text-color; border-radius:5px 5px 0px 0px;
-}
-
-#coverpl {
-	position:absolute; left:5px; top:0px; background-color:white;
-	background-repeat:no-repeat; background-position:center center;
-}
-
-#chatcontrols {margin-top:4px}
-
+#chanavatar {margin-right:3px; margin-top:-4px}
+#azukirow {padding-left:5px; padding-right:5px; border-left:solid 2px transparent; border-right:solid 2px transparent;background:transparent; background-repeat:no-repeat !important; background-position:center center !important;margin:0px -8px; min-height:5px;}
+#titlerow {background-position:0px center;background-size:0% 100%;background-repeat:no-repeat;margin:-5px -8px 5px;border-radius:4px;}
+#titlerow #currenttitle {border:none;}
+#coverpl {position:absolute; left:0px; top:0px; background-color:white;background-position:center center;}
+#redirectPlayer {position:absolute; left:0px; top:0px; background-color:white;background-position:center center; cursor:pointer;}
 #chatpanel {margin-top:0px; margin-bottom:0px}
-#fontspanel, #emotespanel {
-	text-align:center; max-width:700px; margin:0px auto 5px auto; border:solid 2px white; border-radius:6px
-}
+#fontspanel{background-color: #1C1E22; text-align:center; max-width:625px; margin:0 auto 0 auto; border:solid 2px black; border-radius:6px}
+#lookuppanel{background-color: #1C1E22; text-align:center; margin:0 auto 0 auto; border:solid 2px black; border-radius:6px;overflow: hidden;width:809px;height:431px;display:block}
+#lookuplist {overflow-y:scroll;overflow-x:hidden;float:left;width:400px;height:400px;}
+#lookupimage {float:left;width:405px;height: 400px;}
+#emotelookupimg {max-width:400px;max-height:400px;position: relative;top: 50%;transform: translateY(-50%);}
+#lookupbox {width:500px;text-align: left;}
+#emotespanel {background-color: #1C1E22; text-align:center; max-width:2000px; margin:0px 0px 0px 0px; border:solid 2px black; border-radius:6px}
 #fontsbtnwrap {margin-top:5px; margin-bottom:5px}
 #unibtnwrap {margin-top:5px; margin-bottom:2px}
-#fontsbtnwrap .btn, #unibtnwrap .btn {margin:0px 3px 3px 3px}
-#emotespanel img {margin:5px; max-height:35px; cursor:pointer}
-
-#sounds-dropdown {
-	position:absolute; top:22px; display:block; z-index:10000; padding:5px;
-	overflow:auto; margin-right:5px;
-}
-#muteall {width:100%}
-
-#advplcontrols {width:100%; padding-top:10px}
-#advplcontrols button {width:25%}
-
-#leftpanecontrols {margin-right:5px}
-#layout-btn {margin-left:5px}
-
-#configbtnwrap, #modewrap, #themewrap, #funcbtnwrap, #cleardbwrap, #gallery-well, #hidewrap {text-align:center}
-#mode-sel, #theme-sel, #gal-sel {width:80%; margin:0px auto}
+#emotespanel img {margin:1px; max-height:35px; cursor:pointer}
+#mode-sel, #theme-sel{width:80%; margin:0px auto}
 .theme-header {text-align:center; font-size:9pt; font-style:italic}
-
-.db-cat {overflow:auto; max-height:400px}
-.db-break {width:100%}
-.db-title {margin-left:4px}
-.db-link {margin-left:5px}
-
 footer {padding-bottom:5px}
-#leftfooter {font-size:10pt; margin-bottom:15px}
-#rightfooter {float:right; margin:0px 0px 15px 15px}
-
+#leftfooter {font-size:10pt; margin-bottom:50px}
+#rightfooter {float:right; margin-top:-50px}
+#chatfunc-dropdown {position:absolute; top:22px; display:block; z-index:10000; padding:5px;overflow:auto; margin-right:5px;}
 
 /* ----- Additional jQuery classes ----- */
 
 .relative {position:relative}
-
-.covered {visibility:hidden; opacity:0}
-
 .dist {background-color:gold; color:red; font-size:12pt; padding:3px}
-
-.mX {
-	-webkit-transform:scaleX(-1); -moz-transform:scaleX(-1); transform:scaleX(-1);
-	-ms-transform:scaleX(-1); -o-transform:scaleX(-1);
-}
-
-.mY {
-	-webkit-transform:scaleY(-1); -moz-transform:scaleY(-1); transform:scaleY(-1);
-	-ms-transform:scaleY(-1); -o-transform:scaleY(-1);
-}
-
-.rotate {
-	-webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);
-	-ms-transform:rotate(180deg); -o-transform:rotate(180deg);
-}
-
-.vertical {
-	-webkit-transform:rotate(270deg); -moz-transform:rotate(270deg); transform:rotate(270deg);
-	-ms-transform:rotate(270deg); -o-transform:rotate(270deg);
-}
+.mX {-webkit-transform:scale(-1, 1); -moz-transform:scale(-1, 1);-ms-transform:scale(-1, 1); -o-transform:scale(-1, 1); transform:scale(-1, 1);}
+.mY {-webkit-transform:scale(1, -1); -moz-transform:scale(1, -1);-ms-transform:scale(1, -1); -o-transform:scale(1, -1); transform:scale(1, -1);}
+.rotate {-webkit-transform:rotate(90deg); -moz-transform:rotate(90deg);-ms-transform:rotate(90deg); -o-transform:rotate(90deg); transform:rotate(90deg);}
+.vertical {-webkit-transform:rotate(270deg); -moz-transform:rotate(270deg);-ms-transform:rotate(270deg); -o-transform:rotate(270deg); transform:rotate(270deg);}
+.spin, .spin2, .spintext{-webkit-animation: spin 5ms linear infinite;-moz-animation: spin 5ms linear infinite;animation: spin 5ms linear infinite;}
+@-webkit-keyframes spin {100% {-webkit-transform: rotate(360deg); transform:rotate(360deg);}}
+@-moz-keyframes spin {100% {-moz-transform: rotate(360deg); transform:rotate(360deg);}}
+@keyframes spin {100% {-webkit-transform: rotate(360deg); transform:rotate(360deg);}}
+.hflip {display: inline-block;-moz-transform: scale(-1, 1);-webkit-transform: scale(-1, 1);-o-transform: scale(-1, 1);-ms-transform: scale(-1, 1);transform: scale(-1, 1);}
+.vflip {display: inline-block;-moz-transform: scale(1, -1);-webkit-transform: scale(1, -1);-o-transform: scale(1, -1);-ms-transform: scale(1, -1);transform: scale(1, -1);}
+span.glyphicon.glyphicon-time {color: rgba(255,0,0,0) !important;background: url("https://i.imgur.com/gf7rfYv.png") !important;}
